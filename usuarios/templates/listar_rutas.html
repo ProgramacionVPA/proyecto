@@ -1,0 +1,10 @@
+<h2>Rutas disponibles</h2>
+{% for ruta in rutas %}
+  <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+    <p><strong>{{ ruta.origen }}</strong> → <strong>{{ ruta.destino }}</strong></p>
+    <p><b>Hora:</b> {{ ruta.hora_salida }} | <b>Días:</b> {{ ruta.dias }} | <b>Cupos:</b> {{ ruta.cupos_disponibles }}</p>
+    <p><b>Publicado por:</b> {{ ruta.usuario.username }}</p>
+  </div>
+{% empty %}
+  <p>No hay rutas registradas.</p>
+{% endfor %}
